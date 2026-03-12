@@ -19,38 +19,38 @@
         <mxCell id="sst6KfaYgZsl44NkIdrI-11" edge="1" parent="1" source="sst6KfaYgZsl44NkIdrI-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="sst6KfaYgZsl44NkIdrI-10" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="sst6KfaYgZsl44NkIdrI-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;생성한 수를 담는 배열:&lt;/div&gt;int array[size]&lt;div&gt;3의 배수를 담는 배열:&lt;/div&gt;&lt;div&gt;int multiple3_array[size]&lt;/div&gt;&lt;div&gt;3의 배수가 아닌 수 담는 배열:&lt;/div&gt;&lt;div&gt;int not_multiple3_array[size]&lt;/div&gt;" vertex="1">
-          <mxGeometry height="100" width="220" x="160" y="320" as="geometry" />
+        <mxCell id="sst6KfaYgZsl44NkIdrI-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;생성한 수를 담는 배열:&lt;/div&gt;int array[size]" vertex="1">
+          <mxGeometry height="50" width="220" x="160" y="320" as="geometry" />
         </mxCell>
         <mxCell id="sst6KfaYgZsl44NkIdrI-13" edge="1" parent="1" source="sst6KfaYgZsl44NkIdrI-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="sst6KfaYgZsl44NkIdrI-12" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="sst6KfaYgZsl44NkIdrI-10" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="반복문으로 1 ~ 100 사이의 랜덤한 숫자를 size만큼 생성&lt;div&gt;생성과 동시에 array에 순서대로 대입&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="280" x="130" y="480" as="geometry" />
+          <mxGeometry height="60" width="280" x="130" y="420" as="geometry" />
         </mxCell>
         <mxCell id="sst6KfaYgZsl44NkIdrI-15" edge="1" parent="1" source="sst6KfaYgZsl44NkIdrI-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="sst6KfaYgZsl44NkIdrI-14" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="sst6KfaYgZsl44NkIdrI-12" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="multiples_of_3(array, size, multiple3_array) 실행" vertex="1">
-          <mxGeometry height="60" width="280" x="130" y="620" as="geometry" />
+          <mxGeometry height="60" width="280" x="130" y="540" as="geometry" />
         </mxCell>
         <mxCell id="sst6KfaYgZsl44NkIdrI-59" edge="1" parent="1" source="sst6KfaYgZsl44NkIdrI-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="sst6KfaYgZsl44NkIdrI-57" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="sst6KfaYgZsl44NkIdrI-14" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="not_multiples_of_3(array, size, not_multiple3_array) 실행" vertex="1">
-          <mxGeometry height="60" width="320" x="110" y="760" as="geometry" />
+          <mxGeometry height="60" width="320" x="110" y="650" as="geometry" />
         </mxCell>
         <mxCell id="sst6KfaYgZsl44NkIdrI-21" edge="1" parent="1" source="sst6KfaYgZsl44NkIdrI-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="sst6KfaYgZsl44NkIdrI-20" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="sst6KfaYgZsl44NkIdrI-16" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="i = 0&lt;div&gt;result_count = 0&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="140" x="540" y="150" as="geometry" />
+          <mxGeometry height="60" width="140" x="580" y="150" as="geometry" />
         </mxCell>
         <mxCell id="sst6KfaYgZsl44NkIdrI-19" edge="1" parent="1" source="sst6KfaYgZsl44NkIdrI-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="sst6KfaYgZsl44NkIdrI-16">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="sst6KfaYgZsl44NkIdrI-18" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="실행:&lt;div&gt;multiples_of_3(int arr[], int size, int result[])&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="240" x="490" y="60" as="geometry" />
+        <mxCell id="sst6KfaYgZsl44NkIdrI-18" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="실행:&lt;div&gt;multiples_of_3(bool is_multiple_3, int arr[], int size, int result[])&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="340" x="480" y="60" as="geometry" />
         </mxCell>
         <mxCell id="sst6KfaYgZsl44NkIdrI-23" edge="1" parent="1" source="sst6KfaYgZsl44NkIdrI-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="sst6KfaYgZsl44NkIdrI-22" value="True">
           <mxGeometry relative="1" as="geometry" />
@@ -58,19 +58,19 @@
         <mxCell id="sst6KfaYgZsl44NkIdrI-37" edge="1" parent="1" source="sst6KfaYgZsl44NkIdrI-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="sst6KfaYgZsl44NkIdrI-36" value="False">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="730" y="260" />
-              <mxPoint x="730" y="720" />
+              <mxPoint x="770" y="260" />
+              <mxPoint x="770" y="800" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="sst6KfaYgZsl44NkIdrI-20" parent="1" style="rhombus;whiteSpace=wrap;html=1;rounded=0;" value="i &amp;lt; size" vertex="1">
-          <mxGeometry height="40" width="80" x="570" y="240" as="geometry" />
+          <mxGeometry height="40" width="80" x="610" y="240" as="geometry" />
         </mxCell>
-        <mxCell id="sst6KfaYgZsl44NkIdrI-25" edge="1" parent="1" source="sst6KfaYgZsl44NkIdrI-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="sst6KfaYgZsl44NkIdrI-24" value="">
+        <mxCell id="sst6KfaYgZsl44NkIdrI-62" edge="1" parent="1" source="sst6KfaYgZsl44NkIdrI-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="sst6KfaYgZsl44NkIdrI-61" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="sst6KfaYgZsl44NkIdrI-22" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="i++" vertex="1">
-          <mxGeometry height="40" width="120" x="550" y="330" as="geometry" />
+          <mxGeometry height="40" width="120" x="590" y="310" as="geometry" />
         </mxCell>
         <mxCell id="sst6KfaYgZsl44NkIdrI-27" edge="1" parent="1" source="sst6KfaYgZsl44NkIdrI-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="sst6KfaYgZsl44NkIdrI-26" value="">
           <mxGeometry relative="1" as="geometry" />
@@ -83,11 +83,11 @@
         <mxCell id="sst6KfaYgZsl44NkIdrI-29" edge="1" parent="1" source="sst6KfaYgZsl44NkIdrI-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="sst6KfaYgZsl44NkIdrI-20">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="510" y="435" />
-              <mxPoint x="510" y="260" />
+              <mxPoint x="520" y="515" />
+              <mxPoint x="520" y="260" />
             </Array>
-            <mxPoint x="630" y="460" as="sourcePoint" />
-            <mxPoint x="560" y="260" as="targetPoint" />
+            <mxPoint x="670" y="460" as="sourcePoint" />
+            <mxPoint x="600" y="260" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="sst6KfaYgZsl44NkIdrI-30" connectable="0" parent="sst6KfaYgZsl44NkIdrI-29" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="False" vertex="1">
@@ -96,116 +96,43 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="sst6KfaYgZsl44NkIdrI-24" parent="1" style="rhombus;whiteSpace=wrap;html=1;rounded=0;" value="arr[i] % 3 == 0" vertex="1">
-          <mxGeometry height="50" width="100" x="560" y="410" as="geometry" />
+          <mxGeometry height="50" width="100" x="600" y="490" as="geometry" />
         </mxCell>
         <mxCell id="sst6KfaYgZsl44NkIdrI-34" edge="1" parent="1" source="sst6KfaYgZsl44NkIdrI-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="sst6KfaYgZsl44NkIdrI-33" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="sst6KfaYgZsl44NkIdrI-26" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="result[result_count] = arr[i]" vertex="1">
-          <mxGeometry height="60" width="160" x="530" y="510" as="geometry" />
+          <mxGeometry height="60" width="160" x="570" y="590" as="geometry" />
         </mxCell>
         <mxCell id="sst6KfaYgZsl44NkIdrI-35" edge="1" parent="1" source="sst6KfaYgZsl44NkIdrI-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="460" y="630" />
-              <mxPoint x="460" y="260" />
+              <mxPoint x="480" y="710" />
+              <mxPoint x="480" y="260" />
             </Array>
-            <mxPoint x="570" y="260" as="targetPoint" />
+            <mxPoint x="610" y="260" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="sst6KfaYgZsl44NkIdrI-33" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="result_count += 1" vertex="1">
-          <mxGeometry height="60" width="120" x="550" y="600" as="geometry" />
+          <mxGeometry height="60" width="120" x="590" y="680" as="geometry" />
         </mxCell>
-        <mxCell id="sst6KfaYgZsl44NkIdrI-36" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="함수 종료" vertex="1">
-          <mxGeometry height="60" width="120" x="550" y="690" as="geometry" />
-        </mxCell>
-        <mxCell id="sst6KfaYgZsl44NkIdrI-38" edge="1" parent="1" source="sst6KfaYgZsl44NkIdrI-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="sst6KfaYgZsl44NkIdrI-44" value="">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="sst6KfaYgZsl44NkIdrI-39" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="i = 0&lt;div&gt;result_count = 0&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="140" x="890" y="150" as="geometry" />
-        </mxCell>
-        <mxCell id="sst6KfaYgZsl44NkIdrI-40" edge="1" parent="1" source="sst6KfaYgZsl44NkIdrI-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="sst6KfaYgZsl44NkIdrI-39">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="sst6KfaYgZsl44NkIdrI-41" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="실행:&lt;div&gt;not_multiples_of_3(int arr[], int size, int result[])&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="260" x="830" y="60" as="geometry" />
-        </mxCell>
-        <mxCell id="sst6KfaYgZsl44NkIdrI-42" edge="1" parent="1" source="sst6KfaYgZsl44NkIdrI-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="sst6KfaYgZsl44NkIdrI-46" value="True">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="sst6KfaYgZsl44NkIdrI-43" edge="1" parent="1" source="sst6KfaYgZsl44NkIdrI-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="sst6KfaYgZsl44NkIdrI-56" value="False">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1080" y="260" />
-              <mxPoint x="1080" y="720" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="sst6KfaYgZsl44NkIdrI-44" parent="1" style="rhombus;whiteSpace=wrap;html=1;rounded=0;" value="i &amp;lt; size" vertex="1">
-          <mxGeometry height="40" width="80" x="920" y="240" as="geometry" />
-        </mxCell>
-        <mxCell id="sst6KfaYgZsl44NkIdrI-45" edge="1" parent="1" source="sst6KfaYgZsl44NkIdrI-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="sst6KfaYgZsl44NkIdrI-51" value="">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="sst6KfaYgZsl44NkIdrI-46" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="i++" vertex="1">
-          <mxGeometry height="40" width="120" x="900" y="330" as="geometry" />
-        </mxCell>
-        <mxCell id="sst6KfaYgZsl44NkIdrI-47" edge="1" parent="1" source="sst6KfaYgZsl44NkIdrI-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="sst6KfaYgZsl44NkIdrI-53" value="">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="sst6KfaYgZsl44NkIdrI-48" connectable="0" parent="sst6KfaYgZsl44NkIdrI-47" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="True" vertex="1">
-          <mxGeometry relative="1" x="-0.0667" y="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="sst6KfaYgZsl44NkIdrI-49" edge="1" parent="1" source="sst6KfaYgZsl44NkIdrI-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="sst6KfaYgZsl44NkIdrI-44">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="860" y="435" />
-              <mxPoint x="860" y="260" />
-            </Array>
-            <mxPoint x="980" y="460" as="sourcePoint" />
-            <mxPoint x="910" y="260" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="sst6KfaYgZsl44NkIdrI-50" connectable="0" parent="sst6KfaYgZsl44NkIdrI-49" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="False" vertex="1">
-          <mxGeometry relative="1" x="-0.0222" y="-1" as="geometry">
-            <mxPoint y="4" as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="sst6KfaYgZsl44NkIdrI-51" parent="1" style="rhombus;whiteSpace=wrap;html=1;rounded=0;" value="arr[i] % 3 != 0" vertex="1">
-          <mxGeometry height="50" width="100" x="910" y="410" as="geometry" />
-        </mxCell>
-        <mxCell id="sst6KfaYgZsl44NkIdrI-52" edge="1" parent="1" source="sst6KfaYgZsl44NkIdrI-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="sst6KfaYgZsl44NkIdrI-55" value="">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="sst6KfaYgZsl44NkIdrI-53" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="result[result_count] = arr[i]" vertex="1">
-          <mxGeometry height="60" width="160" x="880" y="510" as="geometry" />
-        </mxCell>
-        <mxCell id="sst6KfaYgZsl44NkIdrI-54" edge="1" parent="1" source="sst6KfaYgZsl44NkIdrI-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="810" y="630" />
-              <mxPoint x="810" y="260" />
-            </Array>
-            <mxPoint x="920" y="260" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="sst6KfaYgZsl44NkIdrI-55" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="result_count += 1" vertex="1">
-          <mxGeometry height="60" width="120" x="900" y="600" as="geometry" />
-        </mxCell>
-        <mxCell id="sst6KfaYgZsl44NkIdrI-56" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="함수 종료" vertex="1">
-          <mxGeometry height="60" width="120" x="900" y="690" as="geometry" />
+        <mxCell id="sst6KfaYgZsl44NkIdrI-36" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="result_count 반환&lt;div&gt;및&lt;/div&gt;&lt;div&gt;함수 종료&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="590" y="770" as="geometry" />
         </mxCell>
         <mxCell id="sst6KfaYgZsl44NkIdrI-60" edge="1" parent="1" source="sst6KfaYgZsl44NkIdrI-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="sst6KfaYgZsl44NkIdrI-58" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="sst6KfaYgZsl44NkIdrI-57" parent="1" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" value="multiple3_array 값 순차적으로 출력&lt;div&gt;(단, 배열의 각 항목은 &quot;, &quot;로 구분하도록 함)&lt;/div&gt;" vertex="1">
-          <mxGeometry height="80" width="220" x="160" y="860" as="geometry" />
+          <mxGeometry height="80" width="220" x="160" y="750" as="geometry" />
         </mxCell>
         <mxCell id="sst6KfaYgZsl44NkIdrI-58" parent="1" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" value="not_multiple3_array 값 순차적으로 출력&lt;div&gt;(단, 배열의 각 항목은 &quot;, &quot;로 구분하도록 함)&lt;/div&gt;" vertex="1">
-          <mxGeometry height="80" width="220" x="160" y="980" as="geometry" />
+          <mxGeometry height="80" width="220" x="160" y="870" as="geometry" />
+        </mxCell>
+        <mxCell id="sst6KfaYgZsl44NkIdrI-63" edge="1" parent="1" source="sst6KfaYgZsl44NkIdrI-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="sst6KfaYgZsl44NkIdrI-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sst6KfaYgZsl44NkIdrI-61" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="bool current_multiple3 = arr[i] % 3 == 0" vertex="1">
+          <mxGeometry height="40" width="220" x="540" y="400" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
