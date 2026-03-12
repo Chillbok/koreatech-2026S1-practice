@@ -56,15 +56,15 @@ int main() {
     printf("\n");
     
     // 3의 배수가 아닌 숫자 담을 배열 생성하고, 배열에 담기
-    int not_multiple3_array[size];
-    int not_multiple3_count = multiples_of_3(false, array, size, not_multiple3_array);
+    int not_multiple3_count = count_number(false, array, size);
+    int not_multiple3_array[not_multiple3_count];
+    make_array_of_multiple3(false, array, size, not_multiple3_array, not_multiple3_count);
     
-    /*
     printf("3의 배수가 아닌 수: ");
     for (int i = 0; i < not_multiple3_count; i++) {
         printf("%d ", not_multiple3_array[i]);
     }
     printf("\n");
-    */
+
     return 0;
 }
