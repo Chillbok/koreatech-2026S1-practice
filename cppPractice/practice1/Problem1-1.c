@@ -39,7 +39,7 @@ int main() {
     
     printf("3의 배수: ");
     for (int i = 0; i < multiple3_count; i++) {
-        printf("%d, ", multiple3_array[i]);
+        printf("%d ", multiple3_array[i]);
     }
     printf("\n");
     
@@ -49,7 +49,8 @@ int main() {
     
     printf("3의 배수가 아닌 수: ");
     for (int i = 0; i < not_multiple3_count; i++) {
-        printf("%d, ", not_multiple3_array[i]);
+        printf("%d ", not_multiple3_array[i]);
     }
+    printf("\n");
     return 0;
 }
