@@ -13,7 +13,8 @@ bool define_harmony_number(int& first_number, int& selected_number)
 int make_and_get_harmony_vector_length(bool is_smallest, std::vector<int>& param_vector, int first_number)
 {
     int param_length = param_vector.size();
-    int smallest, biggest = first_number;
+    int smallest = first_number;
+    int biggest = smallest;
     std::vector<int> result;
     // 제일 작은거 기준으로 생각할 때
     if (is_smallest)
@@ -91,7 +92,7 @@ int main()
     
     int length = 0;
     // 배열 개수만큼 수 연산하고, 연산한 수는 바로 출력
-    for (int i = 0; i < inputs[i].size(); i++)
+    for (int i = 0; i < inputs.size(); i++)
     {
         length = get_longest_harmony_vector_length(inputs[i]);
         std::cout << length << std::endl;
