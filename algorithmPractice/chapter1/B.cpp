@@ -13,8 +13,10 @@ int main() {
     using std::cout;
     using std::endl;
 
+    // 테스트 케이스 생성
     int testcase_count;
     cin >> testcase_count;
-    TestCase user_input[testcase_count];
+    vector<TestCase> user_input(testcase_count);
+
     return 0;
 }
