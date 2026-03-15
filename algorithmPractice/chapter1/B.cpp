@@ -3,7 +3,6 @@
 
 // 이번에 배워서 처음 써보는 구조체
 struct TestCase {
-    int integer_count;
     std::vector<int>data;
     int selected_numbers[3];
     int biggest_calculated;
@@ -40,8 +39,9 @@ int main() {
     
     // 테스트케이스에 값 집어넣기
     for (int i = 0; i < testcase_count; i++) {
-        cin >> user_input[i].integer_count;
-        user_input[i].data.resize(user_input[i].integer_count);
+        int integer_count;
+        cin >> integer_count;
+        user_input[i].data.resize(integer_count);
         fill_vector(user_input[i].data);
     }
     
