@@ -83,7 +83,6 @@ int main()
         std::cin >> y_length;
         inputs[i].resize(y_length);
         
-        std::cout << i << "행 입력: ";
         for (int j = 0; j < y_length; j++)
         {
             std::cin >> inputs[i][j];
@@ -95,7 +94,7 @@ int main()
     for (int i = 0; i < inputs[i].size(); i++)
     {
         length = get_longest_harmony_vector_length(inputs[i]);
-        printf("%d", length);
+        std::cout << length << std::endl;
     }
     return 0;
 }
