@@ -14,17 +14,18 @@ int main()
     int x_length, y_length;
     std::cin >> x_length;
 
-    std::vector<std::vector<int>> result(x_length);
+    //입력한 배열들 저장하는 변수
+    std::vector<std::vector<int>> inputs(x_length);
 
     for (int i = 0; i < x_length; i++)
     {
         std::cin >> y_length;
-        result[i].resize(y_length);
+        inputs[i].resize(y_length);
         
         std::cout << i << "행 입력: ";
         for (int j = 0; j < y_length; j++)
         {
-            std::cin >> result[i][j];
+            std::cin >> inputs[i][j];
         }
     }
     return 0;
