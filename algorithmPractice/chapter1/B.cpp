@@ -5,6 +5,8 @@
 struct TestCase {
     int integer_count;
     std::vector<int>data;
+    int selected_numbers[3];
+    int biggest_calculated;
 };
 
 // 입력값을 띄어쓰기로 구분해서 값 집어넣는 함수
