@@ -56,23 +56,18 @@ int get_longest_harmony_vector_length(std::vector<int>& param_vector)
     int smallest, biggest;
     std::vector<int> first_smallest;
     std::vector<int> first_biggest;
-    // 고른 수를 가장 작은 수로 정할 때
+    int longest_length = 0;
     for (int i = 0; i < param_vector_length; i++)
     {
-        smallest = param_vector[i];
-        biggest = param_vector[i];
-        for (int j = 0; j < param_vector_length; j++)
-        {
-            int value = param_vector[j];
-            if (value == smallest) first_smallest.push_back(value);
-            else if (value == smallest + 1)
-            {
-                first_smallest.push_back(value);
-                biggest = value;
-            }
-        }
+        // NOTE: 이거 그냥 길이 반환하는 함수에서 두 경우 모두 만들어보고 비교해보면 안되나?
+        // 작은 수 기준으로 조화배열 만든 경우의 수
+        int temporary_length = make_and_get_harmony_vector_length(true, param_vector, param_vector[i]);
+        if (longest_length < temporary_length) longest_length = temporary_length;
+        // 큰 수 기준으로 조화배열 만든 경우의 수
+        temporary_length = make_and_get_harmony_vector_length(false, param_vector, param_vector[i]);
+        if (longest_length < temporary_length) longest_length = temporary_length;
     }
-    // 고른 수를 가장 큰 수로 정할 때
+    return longest_length;
 }
 
 int main()
@@ -93,6 +88,14 @@ int main()
         {
             std::cin >> inputs[i][j];
         }
+    }
+    
+    int length = 0;
+    // 배열 개수만큼 수 연산하고, 연산한 수는 바로 출력
+    for (int i = 0; i < inputs[i].size(); i++)
+    {
+        length = get_longest_harmony_vector_length(inputs[i]);
+        printf("%d", length);
     }
     return 0;
 }
