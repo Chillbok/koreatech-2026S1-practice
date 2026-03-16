@@ -3,7 +3,7 @@
 
 bool is_this_even(int number) {
     if (number % 2 == 0) return true;
-    else false;
+    else return false;
 }
 
 int main() {
