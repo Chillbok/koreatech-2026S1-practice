@@ -198,7 +198,7 @@
         <mxCell id="kff0ONcudsSpHq5dev5V-118" parent="1" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;" value="answer[] 보여주는 반복문 실행" vertex="1">
           <mxGeometry height="80" width="160" x="200" y="1490" as="geometry" />
         </mxCell>
-        <mxCell id="kff0ONcudsSpHq5dev5V-120" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="함수 종료" vertex="1">
+        <mxCell id="kff0ONcudsSpHq5dev5V-120" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="함수 종료" vertex="1">
           <mxGeometry height="60" width="120" x="220" y="1660" as="geometry" />
         </mxCell>
       </root>
