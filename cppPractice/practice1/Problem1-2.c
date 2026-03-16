@@ -1,4 +1,10 @@
 #include <stdio.h>
+#include <stdbool.h>
+
+bool is_this_even(int number) {
+    if (number % 2 == 0) return true;
+    else false;
+}
 
 int main() {
     int arr_size = 10;
@@ -14,5 +20,23 @@ int main() {
     int even[arr_size];
     // 홀수
     int odd[arr_size];
+    int even_count = 0;
+    int odd_count = 0;
+    // 짝수 홀수 나눠서 각각 배열에 넣기
+    for (int i = 0; i < arr_size; i++) {
+        int value = input[i];
+        // 짝수면
+        if (is_this_even(value)) {
+            even[even_count] = value;
+            even_count++;
+        }
+        else
+        {
+            odd[odd_count] = value;
+            odd_count++;
+        }
+    }
+    // 개수 세는 용도로 활용하기 위해 추가
+    even_count++; odd_count++;
     return 0;
 }
