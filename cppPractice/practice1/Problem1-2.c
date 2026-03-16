@@ -36,7 +36,21 @@ int main() {
             odd_count++;
         }
     }
-    // 개수 세는 용도로 활용하기 위해 추가
-    even_count++; odd_count++;
+
+    int answer[arr_size];
+    for (int i = 0; i < odd_count; i++) {
+        answer[i] = odd[i];
+    }
+    for (int i = 0; i < even_count; i++) {
+        int j = arr_size - 1 - i;
+        answer[j] = even[i];
+    }
+    
+    printf("배열 출력: ");
+    for (int i = 0; i < arr_size; i++) {
+        printf("%d ", answer[i]);
+    }
+    printf("\n");
+    
     return 0;
 }
