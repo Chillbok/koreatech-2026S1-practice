@@ -6,15 +6,13 @@ using std::endl;
 using std::vector;
 
 bool solve(vector<int> numbers, int target, int index) {
-    // 공집합인 경우
+    // 공집합이거나, 조합을 완성한 경우
     if (target == 0) return true;
-    
-    // 끝까지 확인했는데 못맞춘 경우, 목표가 음수가 된 경우
+    //끝까지 확인했는데 못 맞춘 경우거나, 목표가 음수가 된 경우
     if (index >= numbers.size() || target < 0) return false;
-
+    // 분기 생성 조건문들
     // 현재 숫자를 포함하는 경우
     if (solve(numbers, target - numbers[index], index + 1)) return true;
-    
     // 현재 숫자를 포함하지 않는 경우
     if (solve(numbers, target, index + 1)) return true;
     return false;
