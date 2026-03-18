@@ -9,8 +9,7 @@ using std::unordered_map;
 
 void solve() {
     int n;
-    if (!(cin >> n)) return;
-    
+    cin >> n;
     unordered_map<long long, int> counts;
     vector<long long> nums(n);
     
@@ -32,5 +31,13 @@ void solve() {
 }
 
 int main() {
+    std::ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    int testcase_count;
+    cin >> testcase_count;
+    for (int i = 0; i < testcase_count; i++) {
+        solve();
+    }
     return 0;
 }
