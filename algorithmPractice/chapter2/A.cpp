@@ -6,6 +6,7 @@ using std::endl;
 using std::vector;
 
 bool solve(vector<int> numbers, int number_to_make) {
+    if (number_to_make == 0) return true;
     int size = numbers.size();
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < size; j++) {
@@ -36,7 +37,9 @@ int main() {
     }
     
     for (bool const& x : testcase_result) {
-        cout << x << endl;
+        if (x == true) cout << "true";
+        else if (x == false) cout << "false";
+        cout << endl;
     }
     return 0;
 }
