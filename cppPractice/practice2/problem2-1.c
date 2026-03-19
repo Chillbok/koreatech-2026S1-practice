@@ -2,7 +2,7 @@
 
 void print_scores(const char* student_names[], const float scores[][4], const char* score_names[], const int student_count, const int score_count) {
     // 첫줄 작성
-    printf("\t", "");
+    printf("\t");
     printf("|");
 
     // 첫 열 출력
@@ -11,6 +11,11 @@ void print_scores(const char* student_names[], const float scores[][4], const ch
         printf("|");
     }
     printf("\n");
+    
+    for (int i = 0; i < (score_count+1) * 8; i++) {
+        printf("-");
+    }
+    printf("-\n");
 
     // 점수들 출력하기
     for (int i = 0; i < student_count; i++) {
