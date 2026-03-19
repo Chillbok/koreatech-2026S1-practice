@@ -11,11 +11,7 @@ bool solve(const vector<int>& numbers, int target, int index) {
     //끝까지 확인했는데 못 맞춘 경우거나, 목표가 음수가 된 경우
     if (index >= numbers.size() || target < 0) return false;
     // 분기 생성 조건문들
-    // 현재 숫자를 포함하는 경우
-    if (solve(numbers, target - numbers[index], index + 1)) return true;
-    // 현재 숫자를 포함하지 않는 경우
-    if (solve(numbers, target, index + 1)) return true;
-    return false;
+    return solve(numbers, target - numbers[index], index + 1) || solve(numbers, target, index + 1);
 }
 
 int main() {
@@ -33,13 +29,10 @@ int main() {
             cin >> selected_integer;
         }
         
-        testcase_result.push_back(solve(input_integers, m, 0));
+        // 결과 즉시 출력
+        if (solve(input_integers, m, 0)) cout << "true\n";
+        else cout << "false\n";
     }
-    
-    for (bool const& x : testcase_result) {
-        if (x == true) cout << "true";
-        else if (x == false) cout << "false";
-        cout << endl;
-    }
+
     return 0;
 }
