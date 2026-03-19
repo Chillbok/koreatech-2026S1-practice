@@ -2,22 +2,22 @@
 
 void print_scores(const char* student_names[], const float scores[][4], const char* score_names[], const int student_count, const int score_count) {
     // 첫줄 작성
-    printf("%-4s", "");
+    printf("\t", "");
     printf("|");
 
     // 첫 열 출력
     for (int i = 0; i < score_count; i++) {
-        printf("%-5s", score_names[i]);
+        printf("%s\t", score_names[i]);
         printf("|");
     }
     printf("\n");
 
     // 점수들 출력하기
     for (int i = 0; i < student_count; i++) {
-        printf("%-5s", student_names[i]);
+        printf("%s\t", student_names[i]);
         printf("|");
         for (int j = 0; j < score_count; j++) {
-            printf("%-5.1f", scores[i][j]);
+            printf("%.1f\t", scores[i][j]);
             printf("|");
         }
         printf("\n");
