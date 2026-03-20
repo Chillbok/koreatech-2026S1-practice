@@ -65,6 +65,18 @@ int main() {
         }
         score_average[i] /= 4;
     }
+    
+    printf("학생평균점수표\n");
+    print_row_line(5);
+    for (int i = 0; i < 4; i++) {
+        printf("%s의 평균: %.1f\n", student_names[i], score_average[i]);
+    }
+    
+    printf("과목평균점수표\n");
+    print_row_line(5);
+    for (int i = 0; i < 4; i++) {
+        printf("%s의 평균: %.1f\n", score_type_names[i], subject_average[i]);
+    }
 
     return 0;
 }
