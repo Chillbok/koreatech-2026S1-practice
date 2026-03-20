@@ -31,17 +31,17 @@ void print_scores(const char* student_names[], const float scores[][4], const ch
 
 int main() {
     int student_count = 4;
-    int scores_count = 4;
+    int score_type_count = 4;
     // 문자열 안전하게 출력하기 위해 빈칸 하나 추가함
     const char* student_names[] = { "철희", "철수", "영희", "영수" };
-    const char* score_names[] = { "국어", "영어", "수학", "도덕" };
-    float scores[student_count][scores_count];
+    const char* score_type_names[] = { "국어", "영어", "수학", "도덕" };
+    float scores[student_count][score_type_count];
     for (int i = 0; i < student_count; i++) {
-        for (int j = 0; j < scores_count; j++) {
-            printf("%s의 %s 점수를 입력하세요. : \n", student_names[i], score_names[j]);
+        for (int j = 0; j < score_type_count; j++) {
+            printf("%s의 %s 점수를 입력하세요. : \n", student_names[i], score_type_names[j]);
             scanf("%f", &scores[i][j]);
         }
     }
-    print_scores(student_names, scores, score_names, student_count, scores_count);
+    print_scores(student_names, scores, score_type_names, student_count, score_type_count);
     return 0;
 }
