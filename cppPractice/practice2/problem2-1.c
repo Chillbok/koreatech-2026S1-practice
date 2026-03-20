@@ -43,5 +43,16 @@ int main() {
         }
     }
     print_scores(student_names, scores, score_type_names, student_count, score_type_count);
+    
+    // 점수별 평균 구하기
+    float score_average[score_type_count];
+    for (int i = 0; i < score_type_count; i++) score_average[i] = 0;
+    for (int i = 0; i < student_count; i++) {
+        for (int j = 0; j < score_type_count; j++) {
+            score_average[j] = scores[i][j];
+        }
+    }
+    for (int i = 0; i < score_type_count; i++) score_average[i] /= student_count;
+
     return 0;
 }
