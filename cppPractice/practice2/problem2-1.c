@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+void print_row_line(int column_size) {
+    for (int i = 0; i < column_size * 8 + 1; i++) printf("-");
+    printf("\n");
+}
+
 void print_scores(const char* student_names[], const float scores[][4], const char* score_names[], const int student_count, const int score_count) {
     // 첫줄 작성
     printf("\t");
@@ -11,11 +16,7 @@ void print_scores(const char* student_names[], const float scores[][4], const ch
         printf("|");
     }
     printf("\n");
-    
-    for (int i = 0; i < (score_count+1) * 8; i++) {
-        printf("-");
-    }
-    printf("-\n");
+    print_row_line(5);
 
     // 점수들 출력하기
     for (int i = 0; i < student_count; i++) {
