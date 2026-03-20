@@ -34,48 +34,65 @@ void print_scores(const char* student_names[], const float scores[][4], const ch
     }
 }
 
+float get_average(float selected[], int size) {
+    float result = 0;
+    for (int i = 0; i < size; i++) {
+        result += selected[i];
+    }
+    return result / size;
+}
+
+void print_arr(float arr[], int size) {
+    printf("\n");
+    for (int i = 0; i < size; i++) {
+        printf("%.1f\t", arr[i]);
+    }
+    printf("\n");
+}
+
 int main() {
     // 문자열 안전하게 출력하기 위해 빈칸 하나 추가함
     const char* student_names[] = { "철희", "철수", "영희", "영수" };
-    const char* score_type_names[] = { "국어", "영어", "수학", "도덕" };
+    const char* subject_names[] = { "국어", "영어", "수학", "도덕" };
     float scores[4][4];
     for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 4; j++) {
-            printf("%s의 %s 점수를 입력하세요. : \n", student_names[i], score_type_names[j]);
+            printf("%s의 %s 점수를 입력하세요. : \n", student_names[i], subject_names[j]);
             scanf("%f", &scores[i][j]);
         }
     }
-    print_scores(student_names, scores, score_type_names, 4, 4);
+    print_scores(student_names, scores, subject_names, 4, 4);
     
     // 학생별 평균 구하기
-    float score_average[4];
-    for (int i = 0; i < 4; i++) score_average[i] = 0;
+    float student_score_average[4];
     for (int i = 0; i < 4; i++) {
+        float selected[4];
         for (int j = 0; j < 4; j++) {
-            score_average[j] = scores[i][j];
+            selected[j] = scores[i][j];
         }
+        student_score_average[i] = get_average(selected, 4);
     }
-    for (int i = 0; i < 4; i++) score_average[i] /= 4;
-    
+
     // 과목 평균 구하기
-    float subject_average[] = {0, 0, 0, 0};
+    float subject_score_average[4];
     for (int i = 0; i < 4; i++) {
+        float selected[4];
         for (int j = 0; j < 4; j++) {
-            score_average[i] += scores[j][i];
+            selected[j] = scores[j][i];
         }
-        score_average[i] /= 4;
+        subject_score_average[i] = get_average(selected, 4);
     }
     
-    printf("학생평균점수표\n");
+    printf("\n학생평균점수표\n");
     print_row_line(5);
     for (int i = 0; i < 4; i++) {
-        printf("%s의 평균: %.1f\n", student_names[i], score_average[i]);
+        printf("%s의 평균: %.1f\n", student_names[i], student_score_average[i]);
     }
     
-    printf("과목평균점수표\n");
+    printf("\n과목평균점수표\n");
     print_row_line(5);
     for (int i = 0; i < 4; i++) {
-        printf("%s의 평균: %.1f\n", score_type_names[i], subject_average[i]);
+        printf("%s의 평균: %.1f\n", subject_names[i], subject_score_average[i]);
     }
 
     return 0;
