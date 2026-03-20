@@ -6,6 +6,9 @@ void print_row_line(int column_size) {
 }
 
 void print_scores(const char* student_names[], const float scores[][4], const char* score_names[], const int student_count, const int score_count) {
+    printf("점수표\n");
+    print_row_line(5);
+
     // 첫줄 작성
     printf("\t");
     printf("|");
@@ -27,6 +30,7 @@ void print_scores(const char* student_names[], const float scores[][4], const ch
             printf("|");
         }
         printf("\n");
+        print_row_line(5);
     }
 }
 
