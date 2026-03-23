@@ -72,36 +72,39 @@ void set_subject_average(int const max_student_count, int const max_score_count,
 }
 
 int main() {
+    int const max_student_count = 4;
+    int const max_subject_count = 4;
+
     const char* student_names[] = { "철희", "철수", "영희", "영수" };
     const char* subject_names[] = { "국어", "영어", "수학", "도덕" };
-    float scores[4][4];
-    set_student_scores(4, 4, student_names, subject_names, scores);
+    float scores[max_student_count][max_subject_count];
+    set_student_scores(max_student_count, max_subject_count, student_names, subject_names, scores);
     print_scores(student_names, scores, subject_names, 4, 4);
     
     // 학생별 평균 구하기
-    float student_score_average[4];
-    for (int i = 0; i < 4; i++) {
-        float selected[4];
-        for (int j = 0; j < 4; j++) {
+    float student_score_average[max_student_count];
+    for (int i = 0; i < max_student_count; i++) {
+        float selected[max_student_count];
+        for (int j = 0; j < max_subject_count; j++) {
             selected[j] = scores[i][j];
         }
         student_score_average[i] = get_average(selected, 4);
     }
 
     // 과목 평균 구하기
-    float subject_score_average[4];
-    set_subject_average(4, 4, scores, subject_score_average);
+    float subject_average[max_subject_count];
+    set_subject_average(max_student_count, max_subject_count, scores, subject_average);
     
     printf("\n학생평균점수표\n");
     print_row_line(5);
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < max_student_count; i++) {
         printf("%s의 평균: %.1f\n", student_names[i], student_score_average[i]);
     }
     
     printf("\n과목평균점수표\n");
     print_row_line(5);
-    for (int i = 0; i < 4; i++) {
-        printf("%s의 평균: %.1f\n", subject_names[i], subject_score_average[i]);
+    for (int i = 0; i < max_subject_count; i++) {
+        printf("%s의 평균: %.1f\n", subject_names[i], subject_average[i]);
     }
 
     return 0;
