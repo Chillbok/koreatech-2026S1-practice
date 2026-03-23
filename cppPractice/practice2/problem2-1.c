@@ -52,20 +52,20 @@ void print_arr(float arr[], int size) {
 
 void set_student_scores(int max_student_count, int max_score_count, const char* student_names[], const char* score_names[], float scores[][max_score_count]) {
     for (int student_count = 0; student_count < max_student_count; student_count++) {
-        for (int score_count = 0; score_count < max_score_count; score_count++) {
-            printf("%s의 %s 점수를 입력하세요: ", student_names[student_count], score_names[score_count]);
-            scanf("%f", &scores[student_count][score_count]);
+        for (int subject_count = 0; subject_count < max_score_count; subject_count++) {
+            printf("%s의 %s 점수를 입력하세요: ", student_names[student_count], score_names[subject_count]);
+            scanf("%f", &scores[student_count][subject_count]);
         }
     }
 }
 
-void set_subject_average(int const max_student_count, int const max_score_count, float scores[][max_score_count], float subject_averages[]) {
+void set_subject_average(int const max_student_count, int const max_subject_count, float scores[][max_subject_count], float subject_averages[]) {
     // 2차원 배열이 정사각행렬 구조일 때에만 사용 가능하기 때문에 추가함
-    if (max_score_count != max_student_count) return;
+    if (max_subject_count != max_student_count) return;
     for (int student_count = 0; student_count < max_student_count; student_count) {
         float subject_score_amount = 0;
-        for (int score_count = 0; score_count < max_score_count; score_count) {
-            subject_score_amount += scores[score_count][student_count];
+        for (int subject_count = 0; subject_count < max_subject_count; subject_count) {
+            subject_score_amount += scores[subject_count][student_count];
         }
         subject_averages[student_count] = subject_score_amount / max_student_count;
     }
