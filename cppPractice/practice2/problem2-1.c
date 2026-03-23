@@ -50,17 +50,20 @@ void print_arr(float arr[], int size) {
     printf("\n");
 }
 
+void set_student_scores(int max_student_count, int max_score_count, const char* student_names[], const char* score_names[], float scores[][max_score_count]) {
+    for (int student_count = 0; student_count < max_student_count; student_count++) {
+        for (int score_count = 0; score_count < max_score_count; score_count++) {
+            printf("%s의 %s 점수를 입력하세요: ", student_names[student_count], score_names[score_count]);
+            scanf("%f", &scores[student_count][score_count]);
+        }
+    }
+}
+
 int main() {
-    // 문자열 안전하게 출력하기 위해 빈칸 하나 추가함
     const char* student_names[] = { "철희", "철수", "영희", "영수" };
     const char* subject_names[] = { "국어", "영어", "수학", "도덕" };
     float scores[4][4];
-    for (int i = 0; i < 4; i++) {
-        for (int j = 0; j < 4; j++) {
-            printf("%s의 %s 점수를 입력하세요. : \n", student_names[i], subject_names[j]);
-            scanf("%f", &scores[i][j]);
-        }
-    }
+    set_student_scores(4, 4, student_names, subject_names, scores);
     print_scores(student_names, scores, subject_names, 4, 4);
     
     // 학생별 평균 구하기
