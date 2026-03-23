@@ -74,12 +74,22 @@ void set_student_average(int const max_student_count, int const max_subject_coun
 void set_subject_average(int const max_student_count, int const max_subject_count, float scores[][max_subject_count], float subject_averages[]) {
     // 2차원 배열이 정사각행렬 구조일 때에만 사용 가능하기 때문에 추가함
     if (max_subject_count != max_student_count) return;
-    for (int student_count = 0; student_count < max_student_count; student_count) {
+    for (int student_count = 0; student_count < max_student_count; student_count++) {
         float subject_score_amount = 0;
-        for (int subject_count = 0; subject_count < max_subject_count; subject_count) {
+        for (int subject_count = 0; subject_count < max_subject_count; subject_count++) {
             subject_score_amount += scores[subject_count][student_count];
         }
         subject_averages[student_count] = subject_score_amount / max_student_count;
+    }
+}
+
+void print_results(const char* title, int max_count, char* const student_names[], float average_arr[]) {
+    printf("\n");
+    printf("%s", title);
+    printf("\n");
+    print_row_line(max_count + 1);
+    for (int i = 0; i < max_count; i++) {
+        printf("%s의 평균: %.1f\n", student_names[i], average_arr[i]);
     }
 }
 
@@ -95,31 +105,14 @@ int main() {
     
     // 학생별 평균 구하기
     float student_score_average[max_student_count];
-    for (int i = 0; i < max_student_count; i++) {
-        float selected[max_student_count];
-        for (int j = 0; j < max_subject_count; j++) {
-            selected[j] = scores[i][j];
-        }
-        student_score_average[i] = get_average(selected, 4);
-    }
+    set_student_average(max_student_count, max_subject_count, scores, student_score_average);
 
     // 과목 평균 구하기
     float subject_average[max_subject_count];
     set_subject_average(max_student_count, max_subject_count, scores, subject_average);
     
-    printf("\n학생평균점수표\n");
-    print_row_line(5);
-    for (int i = 0; i < max_student_count; i++) {
-        printf("%s의 평균: %.1f\n", student_names[i], student_score_average[i]);
-    }
-    
-    printf("\n과목평균점수표\n");
-    print_row_line(5);
-    for (int i = 0; i < max_subject_count; i++) {
-        printf("%s의 평균: %.1f\n", subject_names[i], subject_average[i]);
-    }
-    
-    // 학생별 성적 평균 출력
+    print_results("학생평균점수표", max_student_count, student_names, student_score_average);
+    print_results("과목평균점수표", max_subject_count, student_names, subject_average);
     
     return 0;
 }
