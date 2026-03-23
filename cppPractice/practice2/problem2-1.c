@@ -59,6 +59,18 @@ void set_student_scores(int max_student_count, int max_score_count, const char* 
     }
 }
 
+void set_student_average(int const max_student_count, int const max_subject_count, float scores[][max_subject_count], float student_averages[]) {
+    // 2차원 배열이 정사각행렬 구조일 때에만 사용 가능하기 때문에 추가함
+    if (max_subject_count != max_student_count) return;
+    for (int student_count = 0; student_count < max_student_count; student_count++) {
+        float student_score_amount = 0;
+        for (int subject_count = 0; subject_count < max_subject_count; subject_count++) {
+            student_score_amount += scores[student_count][subject_count];
+        }
+        student_averages[student_count] = student_score_amount / max_student_count;
+    }
+}
+
 void set_subject_average(int const max_student_count, int const max_subject_count, float scores[][max_subject_count], float subject_averages[]) {
     // 2차원 배열이 정사각행렬 구조일 때에만 사용 가능하기 때문에 추가함
     if (max_subject_count != max_student_count) return;
@@ -106,6 +118,8 @@ int main() {
     for (int i = 0; i < max_subject_count; i++) {
         printf("%s의 평균: %.1f\n", subject_names[i], subject_average[i]);
     }
-
+    
+    // 학생별 성적 평균 출력
+    
     return 0;
 }
