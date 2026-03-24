@@ -5,14 +5,12 @@ using std::cout;
 using std::endl;
 using std::vector;
 
-bool solve(const vector<int>& numbers, int target, int index) {
+bool solve(const vector<int>& numbers, int target) {
     if (target < 0) return false;
     // 공집합이거나, 조합을 완성한 경우
     if (target == 0) return true;
-    //끝까지 확인했는데 못 맞춘 경우거나, 목표가 음수가 된 경우
-    if (index >= numbers.size()) return false;
     for (const int& selected : numbers) {
-        if(solve(numbers, target - selected, index + 1)) return true;
+        if(solve(numbers, target - selected)) return true;
     }
     return false;
 }
@@ -31,7 +29,7 @@ int main() {
         for (int& selected : input_integers) {
             cin >> selected;
         }
-        if (solve(input_integers, m, 0)) cout << "true" << endl;
+        if (solve(input_integers, m)) cout << "true" << endl;
         else cout << "false" << endl;
     }
 
