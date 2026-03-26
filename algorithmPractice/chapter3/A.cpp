@@ -9,6 +9,8 @@ using std::endl;
 #include <vector>
 using std::vector;
 
+// 양쪽에서 하나씩 고르기
+// 역순 쌍을 직접 식별하고 처음으로 카운트하는 로직은 여기에만 있음
 long long merge_and_count(vector<int>& arr, int left, int mid, int right) {
     vector<int> temp(right - left + 1);
     int i = left, j = mid + 1, k = 0;
@@ -35,8 +37,10 @@ long long sort_count_inv(vector<int>& arr, int left, int right) {
     if (left >= right) return 0;
     int mid = left + (right - left) / 2;
 
+    // 여기 두개는 재귀적으로 계속해서 호출함
     long long L = sort_count_inv(arr, left, mid);
     long long R = sort_count_inv(arr, mid + 1, right);
+    // 양쪽에서 하나씩 고르기 (실제로 횟수를 세는 함수)
     long long S = merge_and_count(arr, left, mid, right);
 
     return L + R + S;
