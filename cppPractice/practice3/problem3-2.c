@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// strlen()을 사용하면 되지만, 포인터 사용에 익숙해지기 위해 문자열 길이 구하는 함수를 직접 구현해봤음.
 int get_string_length(const char* s) {
     int count = 0;
     const char* word = s;
@@ -14,12 +15,18 @@ int get_string_length(const char* s) {
 }
 
 char* reverse_string(const char* src, int len) {
-    
+    char* result = (char*)malloc(len+1);
+    result[len] = '\0';
+    for (int i = 0;  i < len; i++) {
+        result[i] = src[len-1-i];
+    }
+    return result;
 }
 
 int main() {
     char source[] = "InternetMedia Engineering";
-    char* result = reverse_string(source, strlen(source));
+    int source_length = get_string_length(source);
+    char* result = reverse_string(source, source_length);
     printf("원본 문자열: %s\n", source);
     printf("변경된 문자열: %s\n", result);
     free(result);
