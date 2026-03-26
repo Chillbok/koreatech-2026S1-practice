@@ -39,22 +39,22 @@ void print_line(int line_length) {
     printf("\n");
 }
 void print_user(struct user_info data[], int data_length) {
-    printf("%s\t%s\t%s\t%s\t%s\n", "아이디", "비밀번호", "5개스테이지별 점수", "마법 포인트", "체력 포인트");
-    print_line(64);
+    printf("%s\t\t%s\t%s\t%s\t%s\n", "아이디", "비밀번호", "5개스테이지별 점수", "마법 포인트", "체력 포인트");
+    int line_length = 84;
+    print_line(line_length);
     for (int i = 0; i < data_length; i++) {
-        printf("%15s\t%15s\t%d, %d, %d, %d, %d\t%d\t%d\n",
+        printf("%-15s\t%-15s\t%d, %d, %d, %d, %d\t%d\t\t%d\n",
             data[i].id,
             data[i].password,
             data[i].stage_score_1,
             data[i].stage_score_2,
             data[i].stage_score_3,
             data[i].stage_score_4,
-            data[i].stage_score_5,
             data[i].mp,
             data[i].hp
         );
     }
-    print_line(64);
+    print_line(line_length);
 }
 
 int main() {
