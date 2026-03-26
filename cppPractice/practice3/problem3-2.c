@@ -30,5 +30,13 @@ int main() {
     printf("원본 문자열: %s\n", source);
     printf("변경된 문자열: %s\n", result);
     free(result);
+    
+    // 한글 출력 시도
+    char korean_source[] = "안녕세상아";
+    int korean_source_length = get_string_length(korean_source);
+    char* korean_result = reverse_string(korean_source, korean_source_length);
+    printf("원본 문자열: %s\n", korean_source);
+    printf("변경된 문자열: %s\n", korean_result);
+    free(korean_result);
     return 0;
 }
