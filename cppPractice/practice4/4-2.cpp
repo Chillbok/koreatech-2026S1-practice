@@ -24,7 +24,8 @@ void printExcellentStudent(Student& const selected_student) {
 }
 
 void addBonusPoint(Student& student, int bonus) {
-    for (int i = 0; i < score_count; i++) student.scores[i] += bonus;
+    for (int i = 0; i < score_count; i++)
+        (student.scores[i] + bonus > 100) ? student.scores[i] = 100 : student.scores[i] += bonus;
 }
 
 int main() {
