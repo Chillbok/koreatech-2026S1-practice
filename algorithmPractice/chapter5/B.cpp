@@ -9,7 +9,19 @@
 */
 #include <iostream>
 using std::cin; using std::cout; using std::endl;
+#include <vector>
+using std::vector;
+
+void test() {
+    int integer_count;
+    cin >> integer_count;
+    vector<int> arr(integer_count);
+    for (int i = 0; i < integer_count; i++) cin >> arr[i];
+}
 
 int main() {
+    int T;
+    cin >> T;
+    while (T--) test();
     return 0;
 }
