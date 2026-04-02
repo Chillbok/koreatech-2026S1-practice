@@ -11,6 +11,8 @@
 using std::cin; using std::cout; using std::endl;
 #include <vector>
 using std::vector;
+#include <map>
+using std::map;
 
 void test() {
     int integer_count;
