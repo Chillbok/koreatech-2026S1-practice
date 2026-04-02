@@ -1,22 +1,21 @@
 #include <iostream>
 using std::cin; using std::cout; using std::endl;
 
+const double PI = 3.14;
+
 // 원 면적 출력
 double calculateArea(double radius) {
-    double result = 0;
-    return result;
+    return PI * radius * radius;
 }
 
 // 삼각형 면적 출력
 double calculateArea(double base, double height) {
-    double result = 0;
-    return result;
+    return base * height / 2;
 }
 
-// 사각형 면적 출력
+// 정사각형 면적 출력
 int calculateArea(int width, int height=-1) {
-    int result = 0;
-    return result;
+    return width * width;
 }
 
 int main() {
