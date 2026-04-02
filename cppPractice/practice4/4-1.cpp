@@ -14,7 +14,7 @@ double calculateArea(double base, double height) {
 }
 
 // 정사각형 면적 출력
-int calculateArea(int width, int height=-1) {
+int calculateArea(int width) {
     return width * width;
 }
 
