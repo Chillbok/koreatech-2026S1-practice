@@ -10,7 +10,7 @@ struct Student {
 int const name_length = 20;
 int const score_count = 10;
 
-void printExcellentStudent(Student& const selected_student) {
+void printExcellentStudent(const Student& selected_student) {
     float result = 0;
     for (int i = 0; i < score_count; i++) result += selected_student.scores[i];
     result /= score_count;;
