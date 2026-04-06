@@ -14,6 +14,39 @@ using std::vector;
 #include <algorithm>
 #include <random>
 
+void solve() {
+    int N;
+    if (!(cin >> N)) return;
+    vector<int> nums(N);
+    for (int i = 0; i < N; i++) cin >> nums[i];
+    
+    // 무작위 수 생성
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<int> dis(0, N-1);
+    
+    // 답을 찾을 때까지 계속 시도하기
+    while (true) {
+        int candidate = nums[dis(gen)];
+        int count = 0;
+        for (int x : nums) {
+            if (x == candidate) count++;
+        }
+
+        // 과반수 여부 확인
+        if (count > N / 2) {
+            cout << candidate << endl;
+            break;
+        }
+    }
+    
+}
+
 int main() {
+    int T;
+    cin >> T;
+    while (T--) {
+        solve();
+    }
     return 0;
 }
