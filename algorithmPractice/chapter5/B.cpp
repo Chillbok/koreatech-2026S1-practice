@@ -13,38 +13,7 @@ using std::cin; using std::cout; using std::endl;
 using std::vector;
 #include <algorithm>
 #include <random>
-#include <ctime>
-
-void test(std::mt19937& gen) {
-    int integer_count;
-    cin >> integer_count;
-    vector<int> arr(integer_count);
-    for (int i = 0; i < integer_count; i++) cin >> arr[i];
-    
-    std::uniform_int_distribution<> dis(0, integer_count - 1);
-    
-    while(true) {
-        int random_index = dis(gen);
-        int candidate = arr[random_index];
-
-        int count = 0;
-        for (int i = 0; i < integer_count; i++) {
-            if (arr[i] == candidate) count++;
-        }
-        
-        if (count > integer_count / 2) {
-            cout << candidate << endl;
-            return;
-        }
-    }
-}
 
 int main() {
-    std::random_device rd;
-    std::mt19937 gen(rd());
-
-    int T;
-    cin >> T;
-    while (T--) test(gen);
     return 0;
 }
