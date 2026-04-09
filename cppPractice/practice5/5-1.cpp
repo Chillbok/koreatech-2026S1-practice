@@ -39,7 +39,7 @@ int main() {
     r1.Set_HWidth(4, 5);
 
     r2.Set_XY(5, 5);
-    r2.Set_HWidth(4, 5);
+    r2.Set_HWidth(5, 5);
     
     r1.Display();
     cout << "사각형 r1의 면적: " << r1.Get_Area() << endl;
