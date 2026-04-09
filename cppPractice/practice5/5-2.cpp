@@ -62,7 +62,6 @@ int main() {
     cout << "Area of p1: " << p1.GetArea() << endl;
     cout << "Volume of p1: " << p1.GetVolume() << endl;
 
-    // 3. 두 점 사이의 거리 계산 (p1과 p2의 거리)
     double dist = p1.Distance(p2);
 
     cout << "\n=== Distance Result ===" << endl;
