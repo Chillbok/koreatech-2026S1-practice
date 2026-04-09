@@ -27,8 +27,7 @@ void Rectangle::Display() { cout << "사각형의 시작좌표는 (" << x << ","
 bool Rectangle::Area_Compare(Rectangle &r) {
     int r_area = r.Get_Area();
     int this_area = Get_Area();
-    if (this_area >= r_area) return 1;
-    else return 0;
+    return (this_area >= r_area) ? 1 : 0;
 }
 
 int main() {
