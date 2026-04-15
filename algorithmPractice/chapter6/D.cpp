@@ -2,6 +2,8 @@
 using std::cin; using std::cout; using std::endl;
 #include <vector>
 using std::vector;
+#include <algorithm>
+using std::swap;
 
 bool check_same(const int n1, const int n2, const int n3) {
 	int number = (n1 + n3) / 2;
