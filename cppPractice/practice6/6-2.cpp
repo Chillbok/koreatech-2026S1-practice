@@ -54,6 +54,18 @@ class Book {
 	int get_price() const { return price; }
 };
 
+void find_cheaper(Book& a, Book& b) {
+	int a_price = a.get_price();
+	int b_price = b.get_price();
+
+	cout << "=== 가격 비교 결과 ===";
+	cout << a.get_name() << " vs " << b.get_name() << endl;
+	
+	if (a_price == b_price) cout << "두 책의 가격이 같습니다" << endl;
+	else if (a_price < b_price) cout << "더 저렴한 책: " << a.get_name() << endl;
+	else if (a_price > b_price) cout << "더 저렴한 책: " << b.get_name() << endl;
+}
+
 int main() {
 	Book book1("C++ Programming", "홍릉출판사", 25000);
 	Book book2 = book1;
