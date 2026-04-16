@@ -10,6 +10,7 @@ class Book {
 	public:
 	// 매개변수가 제대로 선언되지 않았음.
 	// Book(char*);
+	// NULL 선언은 선언 부분에서만 해야 함
 	Book(const char* str = NULL);
 	~Book() {
 		delete title;
@@ -17,7 +18,8 @@ class Book {
 	void showtitle(void);
 };
 
-Book::Book(const char *str = NULL) {
+// NULL 선언을 제거함
+Book::Book(const char *str) {
 	int len;
 	len = strlen(str);
 	title = new char[len + 1];
