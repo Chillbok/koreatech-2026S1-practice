@@ -30,7 +30,7 @@ class Book {
 		strcpy(title, other.title);
 		
 		len = strlen(other.company);
-		company = new[len + 1];
+		company = new char[len + 1];
 		strcpy(company, other.company);
 	}
 	
