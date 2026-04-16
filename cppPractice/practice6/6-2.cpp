@@ -45,8 +45,12 @@ class Book {
 	}
 	
 	void show_info() const {
-		cout << "제목: " << title << endl;
-		cout << "가격: " << price << "원" << endl;
+		cout << "도서명: " << title;
+		cout << " | ";
+		cout << "출판사:";
+		cout << " | ";
+		cout << "가격: " << price << "원";
+		cout << endl;
 	}
 	
 	// 반환된 값을 수정하지 못하게 하기 위해서, 그리고 함수 내부에서 수정을 못하게 하기 위해서 const를 두번 사용함
@@ -64,7 +68,7 @@ void find_cheaper(Book& a, Book& b) {
 	
 	if (a_price == b_price) cout << "두 책의 가격이 같습니다" << endl;
 	else if (a_price < b_price) cout << "더 저렴한 책: " << a.get_name() << "." << a.get_company() << endl;
-	else if (a_price > b_price) cout << "더 저렴한 책: " << b.get_name() << "." << a.get_company() << endl;
+	else if (a_price > b_price) cout << "더 저렴한 책: " << b.get_name() << "." << b.get_company() << endl;
 }
 
 int main() {
