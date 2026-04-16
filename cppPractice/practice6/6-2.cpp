@@ -60,11 +60,11 @@ void find_cheaper(Book& a, Book& b) {
 	int b_price = b.get_price();
 
 	cout << "=== 가격 비교 결과 ===";
-	cout << a.get_name() << " vs " << b.get_name() << endl;
+	cout << a.get_company() << " vs " << b.get_company() << endl;
 	
 	if (a_price == b_price) cout << "두 책의 가격이 같습니다" << endl;
-	else if (a_price < b_price) cout << "더 저렴한 책: " << a.get_name() << endl;
-	else if (a_price > b_price) cout << "더 저렴한 책: " << b.get_name() << endl;
+	else if (a_price < b_price) cout << "더 저렴한 책: " << a.get_name() << "." << a.get_company() << endl;
+	else if (a_price > b_price) cout << "더 저렴한 책: " << b.get_name() << "." << a.get_company() << endl;
 }
 
 int main() {
