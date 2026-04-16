@@ -51,6 +51,7 @@ class Book {
 	
 	// 반환된 값을 수정하지 못하게 하기 위해서, 그리고 함수 내부에서 수정을 못하게 하기 위해서 const를 두번 사용함
 	const char* get_name() const { return (title != NULL) ? title : ""; }
+	const char* get_company() const { return (company != NULL) ? company : ""; }
 	int get_price() const { return price; }
 };
 
@@ -79,5 +80,9 @@ int main() {
 	cout << "Book 3 정보: "; book3.show_info();
 	
 	// 아래에 값 비교하고 더 싼 책을 찾는 코드 만들 예정
+	find_cheaper(book1, book2);
+	find_cheaper(book1, book3);
+	find_cheaper(book2, book3);
+
 	return 0;
 }
