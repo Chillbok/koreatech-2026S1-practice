@@ -48,6 +48,10 @@ class Book {
 		cout << "제목: " << title << endl;
 		cout << "가격: " << price << "원" << endl;
 	}
+	
+	// 반환된 값을 수정하지 못하게 하기 위해서, 그리고 함수 내부에서 수정을 못하게 하기 위해서 const를 두번 사용함
+	const char* get_name() const { return (title != NULL) ? title : ""; }
+	int get_price() const { return price; }
 };
 
 int main() {
