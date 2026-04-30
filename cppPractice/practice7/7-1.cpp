@@ -46,7 +46,8 @@ void Rectangle::Display() {
 	int area = width * height;
 	int full_length = 2 * width + 2 * height;
 	
-	cout << "사각형의 넓이는 " << area << "이고, 둘레는 " << full_length << "입니다." << endl;
+	cout << "사각형의 넓이: " << area << endl;
+	cout << "사각형의 둘레: " << full_length << endl;
 }
 
 int main() {
