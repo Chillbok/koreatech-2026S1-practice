@@ -11,7 +11,7 @@ private:
 public:
 	ObjectTracker();
 	~ObjectTracker();
-	void ShowStatus();
+	static void ShowStatus();
 };
 
 int ObjectTracker::currentCount = 0;
@@ -27,6 +27,16 @@ ObjectTracker::~ObjectTracker() {
 	cout << "[ID: " << id << "] 객체 소멸 (현재 생존: " << currentCount << "개)" << endl;
 }
 
+void ObjectTracker::ShowStatus() {
+	cout << "--- 실시간 시스템 상태 ---" << endl;
+	cout << "현재 메모리 내 객체: " << currentCount << " 개" << endl;
+	cout << "누적 생성된 총 객체: " << totalCount << " 개" << endl;
+	cout << "--------------------------" << endl;
+}
+
 int main() {
+	ObjectTracker::ShowStatus();
+	ObjectTracker a;
+	ObjectTracker::ShowStatus();
 	return 0;
 }
