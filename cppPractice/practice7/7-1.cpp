@@ -6,7 +6,8 @@ using std::vector;
 struct Point {
 	int x;
 	int y;
-	Point(int n1, int n2) { x = n1; y = n2};
+	Point() {x = 0; y = 0;}
+	Point(int n1, int n2) {x = n1; y = n2;}
 };
 
 class Rectangle {
@@ -33,6 +34,8 @@ Rectangle::Rectangle(Point point_1, Point point_2) {
 	leftupper = point_1; rightdown = point_2;
 	width = rightdown.x - leftupper.x;
 	height = leftupper.y - rightdown.y;
+	if (width < 0) width *= -1;
+	if (height < 0) height *= -1;
 }
 
 void Rectangle::Center() {
@@ -53,5 +56,13 @@ void Rectangle::Display() {
 int main() {
 	Point p1(10, 10);
 	Point p2(20, 20);
+	
+	Rectangle r1(p1, p2);
+	r1.Center();
+	r1.Display();
+
+	Rectangle r2 = r1;
+	r2.Center();
+	r2.Display();
 	return 0;
 }
