@@ -35,8 +35,23 @@ void ObjectTracker::ShowStatus() {
 }
 
 int main() {
+	cout << "프로그램 시작" << endl;
 	ObjectTracker::ShowStatus();
+
+	cout << "1. 객체 a, b 생성" << endl;
 	ObjectTracker a;
+	ObjectTracker b;
+
+	{
+		cout << "\n2. 블록 내부 진입 및 객체 c 생성" << endl;
+		ObjectTracker c;
+		ObjectTracker::ShowStatus();
+		
+		cout << "3. 블록 종료 (지역 객체 c가 소멸됩니다)" << endl;
+	}
+	
+	cout << "\n4. 블록 밖에서의 상태 확인" << endl;
 	ObjectTracker::ShowStatus();
+	cout << "5. 프로그램 종료 (a, b가 소멸됩니다)" << endl;
 	return 0;
 }
