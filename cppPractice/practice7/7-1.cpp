@@ -6,6 +6,7 @@ using std::vector;
 struct Point {
 	int x;
 	int y;
+	Point(int n1, int n2) { x = n1; y = n2};
 };
 
 class Rectangle {
@@ -49,5 +50,7 @@ void Rectangle::Display() {
 }
 
 int main() {
+	Point p1(10, 10);
+	Point p2(20, 20);
 	return 0;
 }
