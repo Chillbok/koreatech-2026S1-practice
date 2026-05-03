@@ -1,24 +1,24 @@
 #include <iostream>
 using std::cin; using std::cout; using std::endl;
-#include <vector>
-using std::vector;
-#include <random>
+#include <cstdlib>
+#include <ctime>
 
 class Dice {
 private:
 	int face;
-	std::mt19937 gen;
-	std::uniform_int_distribution<int> dis;
 public:
-	// 생성자
-	Dice() : gen(std::random_device{}()), dis(1, 6), face(0) {};
-
-	// 함수들
-	int get_face() const {return face;};
-	void roll() {face = dis(gen);};
+	int get_face() const {return face;}
+	void roll() { face = rand() % 6 + 1; }
 };
 
 int main() {
-	int amount = 0;
+	srand((unsigned int)time(NULL));
+	Dice d1;
+	for (int i = 0; i < 100; ++i) {
+		d1.roll();
+		if (d1.get_face() <= 0 || d1.get_face() >= 7) cout << endl << "1부터 6 사이가 아닌 수가 출력됨." << endl;
+		cout << d1.get_face() << " ";
+	}
+	cout << endl;
 	return 0;
 }
