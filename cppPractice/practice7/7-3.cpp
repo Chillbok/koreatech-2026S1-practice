@@ -29,7 +29,7 @@ public:
 		float fl_count = count;
 		return fl_total / fl_count;
 	}
-	float get_count() { return count; }
+	int get_count() { return count; }
 };
 
 int main() {
