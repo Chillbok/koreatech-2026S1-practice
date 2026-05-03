@@ -11,14 +11,31 @@ public:
 	void roll() { face = rand() % 6 + 1; }
 };
 
+class Data {
+private:
+	int total;
+	int count;
+public:
+	Data() {
+		total = 0;
+		count = 0;
+	}
+	void add_number(int n) {
+		total += n;
+		++count;
+	}
+	float get_average() { return total / count; }
+};
+
 int main() {
 	srand((unsigned int)time(NULL));
 	Dice d1;
-	for (int i = 0; i < 100; ++i) {
+	
+	Data data;
+	
+	for (int i = 0; i < 10; ++i) {
 		d1.roll();
-		if (d1.get_face() <= 0 || d1.get_face() >= 7) cout << endl << "1부터 6 사이가 아닌 수가 출력됨." << endl;
-		cout << d1.get_face() << " ";
+		data.add_number(d1.get_face());
 	}
-	cout << endl;
 	return 0;
 }
