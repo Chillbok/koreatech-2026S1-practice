@@ -80,5 +80,10 @@ int main() {
 	cout << "이름: " << c1.GetName() << endl;
 	c1.ShowData();
 	cout << endl;
+	
+	Sphere s1(1, 2, 4.0);
+	cout << "이름: " << s1.GetName() << endl;
+	s1.ShowData();
+	cout << endl;
 	return 0;
 }
