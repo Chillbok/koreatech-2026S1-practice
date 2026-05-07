@@ -53,7 +53,7 @@ class Sphere : public Circle {
 public:
 	Sphere(int added_x, int added_y, int added_radius);
 	float GetArea() { return 4 * PI * radius * radius; }
-	float GetVolume() { return 4 / 3 * PI * radius * radius * radius; }
+	float GetVolume() { return (4 / 3) * PI * radius * radius * radius; }
 	void ShowData();
 };
 
