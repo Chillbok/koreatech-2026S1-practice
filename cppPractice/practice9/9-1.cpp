@@ -28,7 +28,7 @@ void Point::ShowData() {
 }
 
 class Circle : public Point {
-private:
+protected:
 	float radius;
 public:
 	Circle(int added_x, int added_y);
@@ -47,6 +47,26 @@ void Circle::ShowData() {
 	cout << GetName() << " 반지름= " << radius << endl;
 	cout << GetName() << " 면적 = " << GetArea() << endl;
 	cout << GetName() << " 부피 = " << GetVolume() << endl;
+}
+
+class Sphere : public Circle {
+public:
+	Sphere(int added_x, int added_y, int added_radius);
+	float GetArea() { return 4 * PI * radius * radius; }
+	float GetVolume() { return 4 / 3 * PI * radius * radius * radius; }
+	void ShowData();
+};
+
+Sphere::Sphere(int added_x, int added_y, int added_radius) : Circle(added_x, added_y) {
+	radius = added_radius;
+	name = "Sphere";
+}
+
+void Sphere::ShowData() {
+	cout << GetName() << " 중심: (" << x << "," << y << ")" << endl;
+	cout << GetName() << "반지름: " << radius << endl;
+	cout << GetName() << " 표면적: " << GetArea() << endl;
+	cout << GetName() << " 부피:" << GetVolume() << endl;
 }
 
 int main() {
