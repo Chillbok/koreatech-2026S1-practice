@@ -25,5 +25,9 @@ void Point::ShowData() {
 }
 
 int main() {
+	Point p1(1, 2);
+	cout << "이름: " << p1.GetName() << endl;
+	p1.ShowData();
+	cout << endl;
 	return 0;
 }
