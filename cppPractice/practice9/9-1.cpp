@@ -8,12 +8,15 @@ using std::string;
 static const float PI = 3.14;
 
 class Point {
-private:
+protected:
 	int x;
 	int y;
 	string name;
 public:
-	Point(int added_x, int added_y) { name = "Point", x = added_x, y = added_y; }
+	Point(int added_x, int added_y) {
+		name = "Point";
+		x = added_x, y = added_y;
+	}
 	int GetX() { return x; }
 	int GetY() { return y; }
 	string GetName() { return name; }
@@ -21,13 +24,41 @@ public:
 };
 
 void Point::ShowData() {
-	cout << "Point = (" << x << "," << y << ")" << endl;
+	cout << name << " = (" << x << "," << y << ")" << endl;
+}
+
+class Circle : public Point {
+private:
+	float radius;
+public:
+	Circle(int added_x, int added_y);
+	void SetRadius(float n) { radius = n; }
+	float GetArea() { return PI * radius * radius; }
+	float GetVolume() { return 0.0; }
+	void ShowData();
+};
+
+Circle::Circle(int added_x, int added_y) : Point(added_x, added_y) {
+	name = "Circle";
+}
+
+void Circle::ShowData() {
+	cout << GetName() << " 중심=(" << GetX() << "," << GetY() << ")" << endl;
+	cout << GetName() << " 반지름= " << radius << endl;
+	cout << GetName() << " 면적 = " << GetArea() << endl;
+	cout << GetName() << " 부피 = " << GetVolume() << endl;
 }
 
 int main() {
 	Point p1(1, 2);
 	cout << "이름: " << p1.GetName() << endl;
 	p1.ShowData();
+	cout << endl;
+	
+	Circle c1(1, 2);
+	c1.SetRadius(4.0);
+	cout << "이름: " << c1.GetName() << endl;
+	c1.ShowData();
 	cout << endl;
 	return 0;
 }
