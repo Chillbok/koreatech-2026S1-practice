@@ -6,20 +6,19 @@ using std::vector;
 struct Work {
     int D;
     int P;
-}
+};
 
 void test() {
-    // 테스트 케이스 생성 및 입력
     int N;
-    cin >> N;
+    if (!(cin >> N)) return;
+
     vector<Work> testcase(N);
     for (Work& x : testcase) { cin >> x.D >> x.P; }
-    // 연산 과정
-
-    // 출력 과정
 }
 
 int main() {
-    int T; cin >> T;
-    while (T--) test();
+    // 첫 줄에 테스트 케이스의 개수 T를 입력받습니다.
+    int T; 
+    while (T--) { test(); }
+    return 0;
 }
