@@ -69,6 +69,20 @@ void Sphere::ShowData() {
 	cout << GetName() << " 부피:" << GetVolume() << endl;
 }
 
+class Cylinder : public Circle {
+private:
+	float radius;
+	int height;
+public:
+	Cylinder(int added_x, int added_y, float added_radius, int added_height);
+};
+
+Cylinder::Cylinder(int added_x, int added_y, float added_radius, int added_height) : Circle::Circle(added_x, added_y) {
+	name = "Cylinder";
+	radius = added_radius;
+	height = added_height;
+}
+
 int main() {
 	Point p1(1, 2);
 	cout << "이름: " << p1.GetName() << endl;
