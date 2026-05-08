@@ -75,12 +75,26 @@ private:
 	int height;
 public:
 	Cylinder(int added_x, int added_y, float added_radius, int added_height);
+	float GetArea();
+	float GetVolume();
+	void ShowData();
 };
 
 Cylinder::Cylinder(int added_x, int added_y, float added_radius, int added_height) : Circle::Circle(added_x, added_y) {
 	name = "Cylinder";
 	radius = added_radius;
 	height = added_height;
+}
+
+float Cylinder::GetArea() { return 2 * PI * radius * radius + 2 * PI * radius * height; }
+
+float Cylinder::GetVolume() { return PI * radius * radius * height; }
+
+void Cylinder::ShowData() {
+	cout << name << " 중심: (" << x << "," << y << ")" << endl;
+	cout << name << " 반지름: " << radius << endl;
+	cout << name << " 표면적: " << GetArea() << endl;
+	cout << name << " 부피: " << GetVolume() << endl;
 }
 
 int main() {
@@ -98,6 +112,11 @@ int main() {
 	Sphere s1(1, 2, 4.0);
 	cout << "이름: " << s1.GetName() << endl;
 	s1.ShowData();
+	cout << endl;
+	
+	Cylinder cy1(1, 2, 4.0, 7);
+	cout << "이름: " << c1.GetName() << endl;
+	c1.ShowData();
 	cout << endl;
 	return 0;
 }
