@@ -5,6 +5,8 @@ using std::cin; using std::cout; using std::endl;
 #include <ctime>
 #include <vector>
 using std::vector;
+#include <string>
+using std::string;
 
 class Shape {
 public:
@@ -59,6 +61,14 @@ Shape *generator(vector<int>& counts) {
 	return NULL;
 }
 
+void result(const vector<int>& counts) {
+	cout << "[ 생성 통계 결과 ]" << endl;
+	vector<string> names = {"Line", "Rectangle", "Triangle", "NullShape"};
+	for (int i = 0; i < 4; ++i) {
+		cout << names[i] << ":\t" << counts[i] << "번" << endl;
+	}
+}
+
 int main() {
 	srand(static_cast<unsigned int>(time(0)));
 	Shape *p;
@@ -78,7 +88,7 @@ int main() {
 
 	delete p;
 	
-	for (int i = 0; i < shape_counts.size(); ++i) cout << shape_counts[i] << endl;
+	result(shape_counts);
 
 	return 0;
 }
