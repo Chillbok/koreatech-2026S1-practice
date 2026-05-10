@@ -20,11 +20,14 @@ public:
 	int GetX() { return x; }
 	int GetY() { return y; }
 	string GetName() { return name; }
-	void ShowData();
+	virtual void ShowData();
+	virtual float GetArea() { return 0.0f;}
+	virtual float GetVolume() { return 0.0f; }
+	virtual ~Point() {}
 };
 
 void Point::ShowData() {
-	cout << name << " = (" << x << "," << y << ")" << endl;
+	cout << GetName() << " 좌표: (" << x << "," << y << ")" << endl;
 }
 
 class Circle : public Point {
@@ -53,7 +56,7 @@ class Sphere : public Circle {
 public:
 	Sphere(int added_x, int added_y, int added_radius);
 	float GetArea() { return 4 * PI * radius * radius; }
-	float GetVolume() { return (4 / 3) * PI * radius * radius * radius; }
+	float GetVolume() { return (4.0 / 3.0) * PI * radius * radius * radius; }
 	void ShowData();
 };
 
@@ -115,8 +118,14 @@ int main() {
 	cout << endl;
 	
 	Cylinder cy1(1, 2, 4.0, 7);
-	cout << "이름: " << c1.GetName() << endl;
-	c1.ShowData();
+	cout << "이름: " << cy1.GetName() << endl;
+	cy1.ShowData();
 	cout << endl;
+
+	Point* pt = new Cylinder(2, 3, 5.0, 8);
+	cout << "이름 : " << pt->GetName()<< endl;
+	cout << "면적: " << pt->GetArea() << endl;
+	cout << "부피: " << pt->GetVolume() << endl;
+	delete pt;
 	return 0;
 }
