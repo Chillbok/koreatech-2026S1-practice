@@ -40,8 +40,6 @@ public:
 };
 
 Shape *generator() {
-	srand(static_cast<unsigned int>(time(0)));
-
 	switch(rand() % 4) {
 		case 0:
 			return new Line;
@@ -56,13 +54,14 @@ Shape *generator() {
 }
 
 int main() {
-	int i;
+	srand(static_cast<unsigned int>(time(0)));
 	Shape *p;
 	
-	p = generator();
-
-	cout << typeid(*p).name() << endl;
-	p->draw();
+	for (int i = 0; i < 10; ++i) {
+		p = generator();
+		cout << "[" << i + 1 << "번째 생성 객체: class " << typeid(*p).name() << endl;
+		p->draw();
+	}
 
 	delete p;
 
