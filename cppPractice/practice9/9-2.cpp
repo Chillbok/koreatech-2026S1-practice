@@ -57,10 +57,14 @@ int main() {
 	srand(static_cast<unsigned int>(time(0)));
 	Shape *p;
 	
-	for (int i = 0; i < 10; ++i) {
+	int max_count = 10;
+	
+	cout << "=== " << max_count << "개의 Shape 생성을 시작합니다 ===" << endl << endl;
+	for (int i = 0; i < max_count; ++i) {
 		p = generator();
 		cout << "[" << i + 1 << "번째 생성 객체: class " << typeid(*p).name() << endl;
 		p->draw();
+		cout << "--------------------------------------" << endl;
 	}
 
 	delete p;
