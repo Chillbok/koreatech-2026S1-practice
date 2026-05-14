@@ -14,7 +14,7 @@ using std::vector;
 #include <algorithm>
 #include <random>
 
-void solve() {
+void test() {
     int N;
     if (!(cin >> N)) return;
     vector<int> nums(N);
@@ -46,7 +46,7 @@ int main() {
     int T;
     cin >> T;
     while (T--) {
-        solve();
+        test();
     }
     return 0;
 }
