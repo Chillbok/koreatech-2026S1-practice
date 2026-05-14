@@ -7,6 +7,7 @@ protected:
     char* name = nullptr;
     char* phone_number = nullptr;
 
+    // 이미 있는 값을 바꾸는 게 목적이라면 이걸 쓰면 안됨. 값 업데이트 전용 함수 필요.
     char* changeCharTo(const char* s) {
         if (!s) return nullptr;
         char* temp = new char[strlen(s) + 1];
@@ -54,6 +55,11 @@ public:
     void checkBonus() const {
         cout << " -> [알림: 본인 확인 완료. 연말 특별 보너스 지급 대상자입니다.]" << endl;
     }
+};
+
+class NameCardController {
+private:
+public:
 };
 
 int main() {
