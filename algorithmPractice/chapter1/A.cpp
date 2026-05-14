@@ -7,7 +7,7 @@ using std::cout;
 using std::vector;
 using std::unordered_map;
 
-void solve() {
+void test() {
     int n;
     cin >> n;
     unordered_map<long long, int> counts;
@@ -37,7 +37,7 @@ int main() {
     int testcase_count;
     cin >> testcase_count;
     for (int i = 0; i < testcase_count; i++) {
-        solve();
+        test();
     }
     return 0;
 }
