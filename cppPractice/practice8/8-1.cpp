@@ -1,6 +1,9 @@
 #include <iostream>
 using std::cin; using std::cout; using std::endl;
 #include <cstring>
+#include <vector>
+using std::vector;
+#include <typeinfo>
 
 class NameCard {
 protected:
@@ -44,6 +47,7 @@ public:
         this->rank = changeCharTo(rank);
     }
     ~RankNameCard() {
+        cout << "[System] RankNameCard(Derived) 직급 지원 해제 완료" << endl;
         delete[] rank;
     }
     
@@ -59,14 +63,74 @@ public:
 
 class NameCardController {
 private:
+    vector<NameCard*> card_vector;
 public:
+    NameCardController() {
+        card_vector.resize(0);
+    }
+    void addCard(NameCard* card) {
+        card_vector.push_back(card);
+    }
+    
+    void showAll() {
+        cout << "[전체 명함 출력]" << endl;
+        for (NameCard* card : card_vector) {
+            card->showInfo();
+        }
+        cout << endl;
+    }
+    
+    void processBonusTask() {
+        cout << "=== RTTI 기반 보너스 대상자 정밀 점검 ===" << endl;
+        int i = 0;
+        for (auto card : card_vector) {
+            ++i;
+            char* card_type = nullptr;
+            if (typeid(*card) == typeid(NameCard)) {
+                card_type = new char[strlen("class NameCard") + 1];
+                strcpy(card_type, "class NameCard");
+            }
+            else if (typeid(*card) == typeid(RankNameCard)) {
+                card_type = new char[strlen("class RankNameCard") + 1];
+                strcpy(card_type, "class RankNameCard");
+            }
+
+            cout << i <<"번 객체 정보 확인중..." << endl;
+            cout << " - 실제 타입명: " << card_type << endl;
+            cout << " - 결과: ";
+            if (typeid(*card) == typeid(NameCard)) {
+                cout << "일반 명함입니다. 보너스 대상자에서 제외됩니다." << endl;
+            }
+            else if (typeid(*card) == typeid(RankNameCard)) {
+                cout << card->getName() << "님은 직급 명함 소지자입니다.";
+                // 자식클래스타입으로 형변환하여 함수 호출
+                static_cast<RankNameCard*>(card)->checkBonus();
+            }
+            cout << "--------------------------" << endl;
+
+            // 메모리 누수 방지를 위해 꼭 필요한 과정이므로 삭제하지 말것.
+            delete[] card_type;
+        }
+    }
+    
+    ~NameCardController() {
+        for (NameCard* card : card_vector) delete card;
+    };
 };
 
 int main() {
-    NameCard junho("이준호");
-    junho.showInfo();
+    NameCardController manager;
     
-    RankNameCard junho_kim("김준호", "CEO");
-    junho_kim.showInfo();
+    // 1. 다형성을 이용한 다양한 객체 추가
+    manager.addCard(new RankNameCard("김철수", "부장"));
+    manager.addCard(new NameCard("이영희")); // 일반명함으로 보너스지급 제외
+    manager.addCard(new RankNameCard("박민수", "대리"));
+
+    // 2. 전체 출력 (가상 함수 동작 확인)
+    manager.showAll();
+    
+    // 3. RTTI 동작 확인 (타입 식별 및 캐스팅 확인: 보너스 지급여부 체크 및 보너스 지급)
+    manager.processBonusTask();
+
     return 0;
 }
