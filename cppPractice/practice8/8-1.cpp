@@ -4,8 +4,8 @@ using std::cin; using std::cout; using std::endl;
 
 class NameCard {
 protected:
-    char* name;
-    char* phone_number;
+    char* name = nullptr;
+    char* phone_number = nullptr;
 
     char* changeCharTo(const char* s) {
         if (!s) return nullptr;
@@ -34,3 +34,9 @@ public:
     // getter 함수들
     const char* getName() const { return name; }
 };
+
+int main() {
+    NameCard junho("이준호");
+    junho.showInfo();
+    return 0;
+}
