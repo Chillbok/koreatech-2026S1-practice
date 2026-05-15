@@ -43,5 +43,12 @@ public:
 };
 
 int main() {
+    LAccount user1(100, 5000, "김삼순", 2000, 1.0);
+    LAccount user2(101, -2000, "홍길동", 100, 0.2);
+
+    cout << "=== 계좌 정보 출력 ===" << endl;
+    user1.ShowData();
+    user2.ShowData();
+
 	return 0;
 }
