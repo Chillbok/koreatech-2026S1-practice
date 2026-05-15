@@ -14,9 +14,31 @@ public:
         balance = _balance;
         strcpy(name, _name);
     }
-    void ShowData(void) {
+    virtual void ShowData(void) const {
         cout << "계좌번호: " << acc_num << endl;
         cout << "계좌잔액: " << balance << endl;
+    }
+    virtual ~Account() {}
+};
+
+class LAccount : public Account {
+private:
+    // 고객별 현금 서비스 한도 정보
+    int credit;
+    // 고객별 신용도 정보 (0 ~ 1)
+    float credit_rate;
+public:
+    LAccount(int _acc_num, int _balance, const char* _name, int credit, float credit_rate) : Account(_acc_num, _balance, _name) {
+        this->credit = credit;
+        this->credit_rate = credit_rate;
+    }
+    void ShowData() const override {
+        cout << "이름: " << name << endl;
+        cout << "계좌번호: " << acc_num << endl;
+        cout << "계좌잔액: " << balance << endl;
+        cout << "현금서비스 한도: " << credit << endl;
+        cout << "신용도: " << credit_rate << endl;
+        cout << "---------------------------------" << endl;
     }
 };
 
