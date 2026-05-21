@@ -27,21 +27,31 @@ public:
 		int new_y = this->y / other.y;
 		return Point(new_x, new_y);
 	}
-	void show() {
-		cout << "(" << x << "," << y << ")" << endl;
+	bool operator!=(const Point& other) { return (this->x != other.x || this->y != other.y); }
+	friend std::ostream& operator<<(std::ostream& os, const Point& other) {
+		os << "[" << other.x << ", " << other.y << "]";
+		return os;
 	}
 };
 
 int main() {
-	Point p1(4, 4), p2(2, 2), p_minus(0,0), p_plus(0,0), p_multiply(0,0), p_divide(0,0);
+	Point p1(1,2);
+	Point p2(3,4);
+	Point p3(0,0);
+	p3 = p1 - p2;
+	cout << "p1(1,2) - p2(3,4) = " << p3 << endl;
 	
-	p_minus = p1-p2;
-	p_minus.show();
-	p_plus = p1+p2;
-	p_plus.show();
-	p_multiply = p1 * p2;
-	p_multiply.show();
-	p_divide = p1 / p2;
-	p_divide.show();
+	p3 = p1 * p2;
+	cout << "p1(1,2) * p2(3,4) = " << p3 << endl;
+	
+	p3 = p1 / p2;
+	cout << "p1(1,2) / p2(3,4) = " << p3 << endl;
+	
+	if (p1 != p2) cout << "다르다!" << endl;
+	else cout << "같다!" << endl;
+
+	if (p2 != p3) cout << "다르다!" << endl;
+	else cout << "같다!" << endl;
+
 	return 0;
 }
