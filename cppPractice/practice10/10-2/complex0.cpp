@@ -39,7 +39,7 @@ std::ostream& operator<<(std::ostream& os, const Complex& c) {
 
 //복소수 x 복소수
 Complex Complex::operator*(const Complex& other) const {
-	float new_real = this->real * other.real + this->imag * other.imag * -1;
+	float new_real = this->real * other.real - (this->imag * other.imag);
 	float new_imag = this->real * other.imag + this->imag * other.real;
 	return Complex(new_real, new_imag);
 }
