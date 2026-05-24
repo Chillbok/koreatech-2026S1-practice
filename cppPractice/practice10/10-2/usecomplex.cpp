@@ -3,23 +3,19 @@
 using std::cin; using std::cout; using std::endl;
 
 int main() {
-	Complex c1(1.0, 2.0);
-	Complex c2;
-	Complex c3 = c1 + c2;
-
-	cout << "c1: " << c1 << endl;
-	cout << "c2: " << c2 << endl;
-	cout << endl;
-	cout << "c1 + c2: " << c3 << endl;
-
-	cout << "(c1 + c2) + 1: " << c3 + 1 << endl;
-	c3 = 1 + c3;
-	cout << "1 + (c1 + c2): " << 1 + c3 << endl;
-	cout << endl;
-
-	c3 = c1 * c2;
-	cout << "c1 * c2: " << c3 << endl;
-	cout << "3 * (c1 * c2): " << 3 * c3 << endl;
-	cout << "(c1 * c2) * 2: " << c3 * 2 << endl;
+	Complex a(3.0, 4.0);
+	Complex c;
+	cout << "하나의 복소수를 입력하세요(끝내려면 q): \n";
+	while(cin >> c) {
+		cout << "c= " << c << endl;
+		cout << "공액복소수= " << ~c << endl;
+		cout << "a = " << a << endl;
+		cout << "a+c = " << a+c << endl;
+		cout << "a-c = " << a-c << endl;
+		cout << "a*c = " << a*c << endl;
+		cout << "2*c = " << 2*c << endl;
+		cout << "하나의 복소수를 입력하세요(끝내려면 q): \n";
+	}
+	cout << "프로그램을 종료합니다. \n";
 	return 0;
 }

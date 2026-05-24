@@ -11,6 +11,10 @@ public:
 	Complex(float real, float imag);
 	Complex();
 
+	Complex operator-(const Complex& other) const;
+	Complex operator-(const float n) const;
+	friend Complex operator-(float n, const Complex& other);
+
 	Complex operator+(const Complex& other) const;
 	Complex operator+(const float n) const;
 	friend Complex operator+(float n, const Complex& other);
@@ -19,9 +23,9 @@ public:
 	Complex operator*(const float n) const;
 	friend Complex operator*(float n, const Complex& other);
 
+	Complex operator~();
+
 	friend std::ostream& operator<<(std::ostream& os, const Complex& c);
 	friend std::istream& operator>>(std::istream& is, Complex& c);
-	
-	void show_number(bool is_complex_conjugate);
 };
 #endif

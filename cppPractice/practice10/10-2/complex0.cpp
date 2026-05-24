@@ -22,6 +22,13 @@ Complex::Complex() {
 	show_number(true);
 }
 
+// 복소수 - 복소수
+Complex Complex::operator-(const Complex& other) const { return Complex(this->real - other.real, this->imag - other.imag); }
+// 복소수 - 숫자
+Complex Complex::operator-(const float n) const { return Complex(this->real - n, this->imag); }
+// 숫자 - 복소수
+Complex operator-(float n, const Complex& other) { return Complex(n - other.real, 0 - other.imag); }
+
 // 복소수 + 복소수
 Complex Complex::operator+(const Complex& other) const { return Complex(real + other.real, imag + other.imag); }
 
@@ -30,6 +37,8 @@ Complex Complex::operator+(const float n) const { return Complex(real + n, imag)
 
 // 숫자 + 복소수
 Complex operator+(float n, const Complex& other) { return Complex(n + other.real, other.imag); }
+
+Complex Complex::operator~() { return Complex(this->real, -(this->imag)); }
 
 std::ostream& operator<<(std::ostream& os, const Complex& c) {
 	if (c.imag < 0) os << c.real << " - " << -1 * c.imag << "i";
@@ -64,15 +73,4 @@ Complex operator*(float n, const Complex& other) {
 	float new_real = n * other.real;
 	float new_imag = n * other.imag;
 	return Complex(new_real, new_imag);
-}
-
-void Complex::show_number(bool is_complex_conjugate) {
-	if (is_complex_conjugate == true) {
-		cout << "공액 복소수: ";
-		cout << "(" << real << ", " << -1 * imag << "i)" << endl;
-	}
-	else {
-		cout << "복소수: ";
-		cout << "(" << real << ", " << imag << "i)" << endl;
-	}
 }
