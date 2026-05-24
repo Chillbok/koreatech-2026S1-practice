@@ -7,19 +7,8 @@ using std::string;
 Complex::Complex(float real, float imag) : real(real), imag(imag) {}
 
 Complex::Complex() {
-	cout << "하나의 복소수를 입력하세요(끝내려면 q): " << endl;
 	string input;
-
-	cout << "실수부: ";
-	cin >> input;
 	if (input == "q") return;
-	real = std::stof(input);
-	
-	cout << "허수부: ";
-	cin >> input;
-	if (input == "q") return;
-	imag = std::stof(input);
-	show_number(true);
 }
 
 // 복소수 - 복소수
@@ -41,8 +30,7 @@ Complex operator+(float n, const Complex& other) { return Complex(n + other.real
 Complex Complex::operator~() { return Complex(this->real, -(this->imag)); }
 
 std::ostream& operator<<(std::ostream& os, const Complex& c) {
-	if (c.imag < 0) os << c.real << " - " << -1 * c.imag << "i";
-	else os << c.real << " + " << c.imag << "i";
+	os << "(" << c.real << "," << c.imag << "i)";
 	return os;
 }
 
