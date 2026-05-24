@@ -20,6 +20,7 @@ public:
 	friend Complex operator*(float n, const Complex& other);
 
 	friend std::ostream& operator<<(std::ostream& os, const Complex& c);
+	friend std::istream& operator>>(std::istream& is, Complex& c);
 	
 	void show_number(bool is_complex_conjugate);
 };
